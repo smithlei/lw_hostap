@@ -12,7 +12,8 @@ CFLAGS += -I../src/utils
 CFLAGS += -I../src/common
 CFLAGS += -I../src/rsn_supp
 
-ALL=wpa_supplicant wpa_passphrase wpa_cli
+#ALL=wpa_supplicant wpa_passphrase wpa_cli
+ALL=wpa_supplicant
 
 all: verify_config $(ALL) dynamic_eap_methods
 
@@ -44,7 +45,7 @@ OBJS += ../src/utils/wpa_debug.o
 OBJS += ../src/utils/wpabuf.o
 OBJS += ../src/crypto/md5.o
 OBJS += ../src/crypto/rc4.o
-OBJS += ../src/crypto/md4.o
+#OBJS += ../src/crypto/md4.o
 OBJS += ../src/crypto/sha1.o
 OBJS += ../src/crypto/des.o
 OBJS_p = wpa_passphrase.o
@@ -876,7 +877,7 @@ ifndef CONFIG_NO_WPA
 OBJS += ../src/rsn_supp/wpa.o
 OBJS += ../src/rsn_supp/preauth.o
 OBJS += ../src/rsn_supp/pmksa_cache.o
-OBJS += ../src/rsn_supp/peerkey.o
+#OBJS += ../src/rsn_supp/peerkey.o
 OBJS += ../src/rsn_supp/wpa_ie.o
 OBJS += ../src/common/wpa_common.o
 NEED_AES=y
