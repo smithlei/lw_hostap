@@ -39,7 +39,7 @@ install: all
 	mkdir -p $(DESTDIR)/usr/local/sbin/
 	for i in $(ALL); do cp $$i $(DESTDIR)/usr/local/sbin/$$i; done
 
-OBJS = config.o
+#OBJS = config.o
 OBJS += ../src/utils/common.o
 OBJS += ../src/utils/wpa_debug.o
 OBJS += ../src/utils/wpabuf.o
@@ -89,9 +89,9 @@ ifdef CONFIG_EAPOL_TEST
 CFLAGS += -Werror -DEAPOL_TEST
 endif
 
-ifndef CONFIG_BACKEND
-CONFIG_BACKEND=file
-endif
+#ifndef CONFIG_BACKEND
+#CONFIG_BACKEND=file
+#endif
 
 ifeq ($(CONFIG_BACKEND), file)
 OBJS += config_file.o
@@ -1148,7 +1148,7 @@ tests: test-ms_funcs test-sha1 test-aes test-eap_sim_common test-md4 test-md5
 
 clean:
 	$(MAKE) -C ../src clean
-	rm -f core *~ *.o *.d eap_*.so $(ALL) $(WINALL)
+	rm -f core *~ *.o *.d eap_*.so $(ALL)
 
 %.eps: %.fig
 	fig2dev -L eps $*.fig $*.eps
