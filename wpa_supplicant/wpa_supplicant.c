@@ -1773,6 +1773,7 @@ void wpa_supplicant_deinit(struct wpa_global *global)
 		wpa_supplicant_global_ctrl_iface_deinit(global->ctrl_iface);
 
 	eap_peer_unregister_methods();
+	//comment for submit
 
 	eloop_destroy();
 
