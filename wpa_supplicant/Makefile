@@ -854,6 +854,10 @@ CFLAGS += -DCONFIG_NO_WPA_MSG
 endif
 endif
 
+ifdef CONFIG_NO_WPA_MSG
+CFLAGS += -DCONFIG_NO_WPA_MSG
+endif
+
 ifdef CONFIG_IPV6
 # for eapol_test only
 CFLAGS += -DCONFIG_IPV6
