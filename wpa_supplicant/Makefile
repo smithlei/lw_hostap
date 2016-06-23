@@ -666,7 +666,7 @@ endif
 endif
 NEED_CRYPTO=y
 else
-OBJS += ../src/crypto/tls_none.o
+#OBJS += ../src/crypto/tls_none.o
 endif
 
 ifdef CONFIG_PKCS12
